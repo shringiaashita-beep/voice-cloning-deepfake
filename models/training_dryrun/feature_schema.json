@@ -1,0 +1,34 @@
+{
+  "window_frames": 256,
+  "window_stride": 128,
+  "features": {
+    "log_mel": {
+      "shape": [
+        80,
+        256
+      ],
+      "dtype": "float32"
+    },
+    "mfcc": {
+      "shape": [
+        20,
+        256
+      ],
+      "dtype": "float32"
+    },
+    "spectral_centroid": {
+      "shape": [
+        1,
+        256
+      ],
+      "dtype": "float32"
+    },
+    "spectral_rolloff": {
+      "shape": [
+        1,
+        256
+      ],
+      "dtype": "float32"
+    }
+  }
+}

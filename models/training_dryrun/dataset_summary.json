@@ -1,0 +1,36 @@
+{
+  "split": "train",
+  "total_samples": 2,
+  "total_windows": 4,
+  "total_speakers": 2,
+  "human_windows": 2,
+  "synthetic_windows": 2,
+  "human_percentage": 50.0,
+  "synthetic_percentage": 50.0,
+  "windows_per_speaker": {
+    "spk1": 2,
+    "spk2": 2
+  },
+  "windows_per_source": {
+    "libri": 2,
+    "eleven": 2
+  },
+  "min_sequence_length": 384,
+  "max_sequence_length": 384,
+  "mean_sequence_length": 384.0,
+  "median_sequence_length": 384.0,
+  "risk_assessment": {
+    "has_class_imbalance": false,
+    "imbalance_warning": null,
+    "has_dominant_speaker": true,
+    "dominant_speaker_warning": "Unusually dominant speaker detected: 'spk1' accounts for 50.0% of total windows.",
+    "has_dominant_source": false,
+    "dominant_source_warning": null,
+    "has_suspicious_split": true,
+    "suspicious_split_warning": "Suspicious split size: split 'train' contains only 4 windowed samples.",
+    "warnings": [
+      "Unusually dominant speaker detected: 'spk1' accounts for 50.0% of total windows.",
+      "Suspicious split size: split 'train' contains only 4 windowed samples."
+    ]
+  }
+}

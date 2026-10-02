@@ -1,0 +1,8 @@
+{
+  "timestamp": "2026-09-28T18:15:03.714755",
+  "zero_speaker_leakage": true,
+  "feature_integrity_pass": true,
+  "finite_values_pass": true,
+  "shape_consistency_pass": true,
+  "dry_run_passed": true
+}

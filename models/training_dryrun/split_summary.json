@@ -1,0 +1,9 @@
+{
+  "train": {
+    "samples": 2,
+    "windows": 4,
+    "speakers": 2,
+    "human_windows": 2,
+    "synthetic_windows": 2
+  }
+}

@@ -1,0 +1,10 @@
+file_path,label,speaker_id,source,source_id,split
+raw/human/example_human_001.wav,human,spk_001,librispeech,libri_reader_1,train
+raw/human/example_human_002.wav,human,spk_001,librispeech,libri_reader_1,train
+raw/human/example_human_003.wav,human,spk_002,librispeech,libri_reader_2,validation
+raw/human/example_human_004.wav,human,spk_003,librispeech,libri_reader_3,test
+raw/synthetic/example_synth_001.wav,synthetic,spk_101,elevenlabs,v2_neural,train
+raw/synthetic/example_synth_002.wav,synthetic,spk_101,elevenlabs,v2_neural,train
+raw/synthetic/example_synth_003.wav,synthetic,spk_102,bark,bark_v1,validation
+raw/synthetic/example_synth_004.wav,synthetic,spk_103,vall_e,vall_e_v1,test
+raw/synthetic/example_synth_005.wav,synthetic,spk_104,rvc,rvc_v2,ood

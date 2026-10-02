@@ -1,0 +1,39 @@
+{
+  "model_name": "VoxGuard ResNet-18 Deepfake Speech Classifier",
+  "model_version": "1.0.0",
+  "model_type": "pytorch",
+  "architecture": "resnet18_logmel",
+  "framework": "torch",
+  "expected_input": {
+    "sample_rate": 16000,
+    "channels": 1,
+    "feature_type": "log_mel_spectrogram",
+    "freq_bins": 80
+  },
+  "expected_sample_rate": 16000,
+  "expected_channels": 1,
+  "class_names": [
+    "human",
+    "synthetic"
+  ],
+  "checkpoint_path": "models/voxguard_resnet18_v1.pt",
+  "checksum": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "training_dataset": "ASVspoof 2019 LA",
+  "training_dataset_version": "2019.1",
+  "evaluation_dataset": "ASVspoof 2021 DF Test Partition",
+  "evaluation_protocol": "zero_speaker_overlap",
+  "speaker_overlap_policy": "speaker_disjoint_mandatory",
+  "metrics": {
+    "accuracy": 0.942,
+    "precision": 0.938,
+    "recall": 0.946,
+    "f1_score": 0.942,
+    "roc_auc": 0.981,
+    "eer": 0.052,
+    "fpr": 0.058,
+    "fnr": 0.054
+  },
+  "calibration_method": "temperature_scaling",
+  "threshold": 0.5,
+  "created_at": "2026-09-24T18:00:00Z"
+}

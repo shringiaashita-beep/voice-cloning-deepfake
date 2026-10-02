@@ -1,0 +1,37 @@
+{
+  "model_name": "VoxGuard Neural Deepfake Classifier (AcousticNet v1.0)",
+  "model_version": "1.0.0-evaluated",
+  "model_type": "pytorch",
+  "architecture": "VoxGuardAcousticNet-1DCNN",
+  "framework": "torch",
+  "expected_input": {
+    "sample_rate": 16000,
+    "channels": 1,
+    "feature_type": "log_mel_mfcc",
+    "freq_bins": 80,
+    "mfcc_bins": 20,
+    "target_frames": 256
+  },
+  "expected_sample_rate": 16000,
+  "expected_channels": 1,
+  "class_names": [
+    "human",
+    "synthetic"
+  ],
+  "checkpoint_path": "models/best_model.pt",
+  "checksum": "99f9f049de2b0f2760b801bbdfe5076c77f74f4d861814738e4d53598d3e49f6",
+  "training_dataset": "ASVspoof 2021 DF / VoxGuard Acoustic Forensics Benchmark",
+  "training_dataset_version": "v1.4",
+  "evaluation_dataset": "In-The-Wild Voice Cloning Benchmark",
+  "evaluation_protocol": "EER & min-tDCF Voice Clone Protocol",
+  "speaker_overlap_policy": "speaker_disjoint_mandatory",
+  "metrics": {
+    "accuracy_percent": 98.4,
+    "eer_percent": 1.82,
+    "inference_latency_ms": 14.6,
+    "f1_score": 0.984
+  },
+  "calibration_method": "temperature_scaling",
+  "threshold": 0.5,
+  "created_at": "2026-09-30T13:14:42Z"
+}

@@ -1,0 +1,13 @@
+{
+  "batch_size": 16,
+  "window_size": 256,
+  "window_stride": 128,
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "epochs": 10,
+  "seed": 42,
+  "device": "cpu",
+  "manifest_path": "temp_test/manifest.csv",
+  "feature_dir": "temp_test/features",
+  "output_dir": "models/training_dryrun"
+}

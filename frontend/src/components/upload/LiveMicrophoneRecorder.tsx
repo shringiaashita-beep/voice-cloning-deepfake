@@ -165,6 +165,9 @@ export const LiveMicrophoneRecorder: React.FC<LiveMicrophoneRecorderProps> = ({
           type: recorder.mimeType || 'audio/wav',
         });
         setRecordedFile(file);
+
+        // Instantly trigger voice deepfake forensic analysis!
+        onRecordingComplete(file);
       };
 
       recorder.start(100);

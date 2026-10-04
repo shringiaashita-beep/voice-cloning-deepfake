@@ -90,17 +90,21 @@ export default function Home() {
     }
   };
 
-  const handleFallbackAnalysis = () => {
+  const handleFallbackAnalysis = async () => {
     setIsLoading(true);
     setErrorDetails(null);
-    setTimeout(() => {
-      const fallbackResult = generateClientFallbackAnalysis(
-        currentFilename || 'uploaded_sample.wav',
-        selectedModel
-      );
+    try {
+      const target = currentFile || currentFilename || 'uploaded_sample.wav';
+      const fallbackResult = await generateClientFallbackAnalysis(target, selectedModel);
       setAnalysisResult(fallbackResult);
+    } catch {
+      setErrorDetails({
+        message: 'Could not perform client DSP analysis on this audio sample.',
+        code: 'CLIENT_DSP_FAILED',
+      });
+    } finally {
       setIsLoading(false);
-    }, 400);
+    }
   };
 
   const handleReset = () => {

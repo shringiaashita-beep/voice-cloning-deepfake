@@ -28,7 +28,7 @@ import { PrintablePdfDossier } from '@/components/analysis/PrintablePdfDossier';
 import { ModelSelector } from '@/components/common/ModelSelector';
 import { EducationalGuide } from '@/components/common/EducationalGuide';
 import { TrainingReadinessCard } from '@/components/analysis/TrainingReadinessCard';
-import { analyzeAudioFile, analyzeAudioUrl, ApiError } from '@/lib/api';
+import { analyzeAudioFile, analyzeAudioUrl, generateClientFallbackAnalysis, ApiError } from '@/lib/api';
 import { AnalysisResponse } from '@/lib/types';
 import { createSampleAudioFile } from '@/lib/audioGenerator';
 
@@ -88,6 +88,19 @@ export default function Home() {
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const handleFallbackAnalysis = () => {
+    setIsLoading(true);
+    setErrorDetails(null);
+    setTimeout(() => {
+      const fallbackResult = generateClientFallbackAnalysis(
+        currentFilename || 'uploaded_sample.wav',
+        selectedModel
+      );
+      setAnalysisResult(fallbackResult);
+      setIsLoading(false);
+    }, 400);
   };
 
   const handleReset = () => {
@@ -252,6 +265,7 @@ export default function Home() {
             else handleReset();
           }}
           onChooseNewFile={handleReset}
+          onUseFallback={handleFallbackAnalysis}
         />
       )}
 
